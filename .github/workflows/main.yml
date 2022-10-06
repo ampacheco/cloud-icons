@@ -4,6 +4,7 @@ on:
   workflow_dispatch
 env: 
   ZIP_URL: https://d1.awsstatic.com/webteam/architecture-icons/q3-2022/AWS-Architecture-Icons-Deck_For-Light-BG_07312022.pptx.fc6d89024028f03b5fe7f8a03b2ffe2d5bf55bda.zip
+  FILE_NAME: AWS-Architecture-Icons-Deck_For-Light-BG_07312022.pptx.fc6d89024028f03b5fe7f8a03b2ffe2d5bf55bda.zip
   
 jobs:
   Explore-GitHub-Actions:
@@ -15,12 +16,13 @@ jobs:
           args: --location --silent --remote-name $ZIP_URL
       
       - name: Unzip PPTX File from AWS Package
-        run: |
-          echo "Unzipping"
+        uses: montudor/action-zip@v1
+        with:
+          args: unzip -d aws -qq "$FILE_NAME" 
      
       - name: Commit to Repo
         run: |
-          echo "Commiting"
+          ls -la ./aws
           
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
