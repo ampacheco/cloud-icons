@@ -23,7 +23,7 @@ jobs:
       - name: Unzip PPTX File from AWS Package
         uses: montudor/action-zip@v1
         with:
-          args: unzip -d aws -qq AWS-Architecture-Icons-Deck_For-Light-BG_07312022.pptx.fc6d89024028f03b5fe7f8a03b2ffe2d5bf55bda.zip
+          args: unzip -o -d aws -qq AWS-Architecture-Icons-Deck_For-Light-BG_07312022.pptx.fc6d89024028f03b5fe7f8a03b2ffe2d5bf55bda.zip
       
       #
       # Setup Commit File
