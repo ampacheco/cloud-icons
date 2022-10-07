@@ -14,7 +14,23 @@ jobs:
       # Checkout the branch
       - name: checkout
         uses: actions/checkout@v3
-  
+      #
+      # Setup Commit File
+      #
+      - name: setup git config
+        run: |
+          # setup the username and email. I tend to use 'GitHub Actions Bot' with no email by default
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
+
+      - name: If File Exists Delete to Replace in the Repo
+        run: |
+          # File Exist Remove from Git and Commit 
+          if [[ -e ./aws/AWS-Architecture-Icons-Deck_For-Light-BG_07312022.pptx ]]; then 
+            git rm -f ./aws/AWS-Architecture-Icons-Deck_For-Light-BG_07312022.pptx
+          fi 
+          git commit -m "🖼 File Updated"
+          
       - name: Download AWS Package
         uses: wei/curl@master
         with:
@@ -25,19 +41,9 @@ jobs:
         with:
           args: unzip -o -d aws -qq AWS-Architecture-Icons-Deck_For-Light-BG_07312022.pptx.fc6d89024028f03b5fe7f8a03b2ffe2d5bf55bda.zip
       
-      #
-      # Setup Commit File
-      #
-      - name: setup git config
-        run: |
-          # setup the username and email. I tend to use 'GitHub Actions Bot' with no email by default
-          git config user.name "GitHub Actions Bot"
-          git config user.email "<>"
-
       - name: Commit to main branch
         run: |
           # Stage the file, commit and push
-          if [[ -e ./aws/AWS-Architecture-Icons-Deck_For-Light-BG_07312022.pptx ]]; then git rm -f ./aws/AWS-Architecture-Icons-Deck_For-Light-BG_07312022.pptx; fi 
           git add ./aws/AWS-Architecture-Icons-Deck_For-Light-BG_07312022.pptx
-          git commit -m "🖼 Files Added"
+          git commit -m "🖼 Files Updated `date`"
           git push
