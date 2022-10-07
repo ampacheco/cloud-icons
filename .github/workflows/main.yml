@@ -1,7 +1,13 @@
 name: Download Cloud Architect Icons 
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: 
-  workflow_dispatch
+  workflow_dispatch:
+  push:
+   branches:
+   - main
+   paths: 
+   - ./aws/**
+
 env: 
   ZIP_URL: https://d1.awsstatic.com/webteam/architecture-icons/q3-2022/AWS-Architecture-Icons-Deck_For-Light-BG_07312022.pptx.fc6d89024028f03b5fe7f8a03b2ffe2d5bf55bda.zip
   ZIP_FILE_NAME: AWS-Architecture-Icons-Deck_For-Light-BG_07312022.pptx.fc6d89024028f03b5fe7f8a03b2ffe2d5bf55bda.zip
