@@ -10,7 +10,11 @@ env:
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
-    steps:
+    steps:    
+      # Checkout the branch
+      - name: checkout
+        uses: actions/checkout@v2
+  
       - name: Download AWS Package
         uses: wei/curl@master
         with:
