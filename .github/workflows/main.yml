@@ -37,6 +37,7 @@ jobs:
       - name: Commit to main branch
         run: |
           # Stage the file, commit and push
+          if [[ -e ./aws/AWS-Architecture-Icons-Deck_For-Light-BG_07312022.pptx ]]; then git rm -f ./aws/AWS-Architecture-Icons-Deck_For-Light-BG_07312022.pptx; fi 
           git add ./aws/AWS-Architecture-Icons-Deck_For-Light-BG_07312022.pptx
           git commit -m "🖼 Files Added"
           git push
