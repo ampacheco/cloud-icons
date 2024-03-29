@@ -59,7 +59,7 @@ jobs:
       - name: Unzip PPTX File from AWS Package
         uses: montudor/action-zip@v1
         with:
-          args: unzip -qq ${{ZIP_FILE_NAME}} -d aws
+          args: unzip -qq *.zip -d aws
         
       
       - name: Commit to main branch
