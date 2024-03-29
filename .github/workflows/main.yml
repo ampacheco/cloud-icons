@@ -21,7 +21,7 @@ jobs:
       - name: 🪳🪳🪳 Debug 🪳🪳🪳
         run: |
           echo $ZIP_URL
-          echo $ZIP_URL
+          echo $ZIP_FILE_NAME
           echo $PPTX_FILE_NAME
     
       # Checkout the branch
