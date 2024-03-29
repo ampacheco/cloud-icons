@@ -57,11 +57,11 @@ jobs:
       - name: Unzip PPTX File from AWS Package
         uses: montudor/action-zip@v1
         with:
-          args: unzip -o -d aws -qq ./$ZIP_FILE_NAME
+          args: unzip -o -qq ./$ZIP_FILE_NAME
       
       - name: Commit to main branch
         run: |
           # Stage the file, commit and push
-          git add ./aws/$PPTX_FILE_NAME
+          git add $PPTX_FILE_NAME
           git commit -m "🖼 Files Updated `date`"
           git push
