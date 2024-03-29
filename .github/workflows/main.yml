@@ -20,7 +20,7 @@ jobs:
     
       - name: 🪳🪳🪳 Debug 🪳🪳🪳
         run: |
-          echo #ZIP_URL
+          echo $ZIP_URL
           echo $ZIP_URL
           echo $PPTX_FILE_NAME
     
@@ -48,6 +48,11 @@ jobs:
         uses: wei/curl@master
         with:
           args: --location --silent --remote-name $ZIP_URL
+
+
+      - name: debug
+        run: |
+          ls -la
       
       - name: Unzip PPTX File from AWS Package
         uses: montudor/action-zip@v1
