@@ -54,6 +54,7 @@ jobs:
         run: |
           ls -la
           echo unzip $ZIP_FILE_NAME
+          echo *********************************
       
       - name: Unzip PPTX File from AWS Package
         uses: montudor/action-zip@v1
