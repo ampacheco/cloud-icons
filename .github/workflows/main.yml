@@ -9,9 +9,9 @@ on:
    - ./aws/**
 
 env: 
-  ZIP_URL: https://d1.awsstatic.com/webteam/architecture-icons/q3-2022/AWS-Architecture-Icons-Deck_For-Light-BG_07312022.pptx.fc6d89024028f03b5fe7f8a03b2ffe2d5bf55bda.zip
-  ZIP_FILE_NAME: AWS-Architecture-Icons-Deck_For-Light-BG_07312022.pptx.fc6d89024028f03b5fe7f8a03b2ffe2d5bf55bda.zip
-  PPTX_FILE_NAME: AWS-Architecture-Icons-Deck_For-Light-BG_07312022.pptx
+  ZIP_URL: https://d1.awsstatic.com/webteam/architecture-icons/q1-2024/AWS-Architecture-Icons-Deck_For-Light-BG_02062024.pptx.b1f92b80898107a7c80eb70d66957c7ff2994b8a.zip
+  ZIP_FILE_NAME: AWS-Architecture-Icons-Deck_For-Light-BG_02062024.pptx.b1f92b80898107a7c80eb70d66957c7ff2994b8a.zip
+  PPTX_FILE_NAME: AWS-Architecture-Icons.pptx
   
 jobs:
   Explore-GitHub-Actions:
@@ -29,13 +29,13 @@ jobs:
           git config user.name "GitHub Actions Bot"
           git config user.email "<>"
 
-      - name: If File Exists Delete to Replace in the Repo
-        run: |
-          # File Exist Remove from Git and Commit 
-          if [[ -e ./aws/AWS-Architecture-Icons-Deck_For-Light-BG_07312022.pptx ]]; then 
-            git rm -f ./aws/AWS-Architecture-Icons-Deck_For-Light-BG_07312022.pptx
-          fi 
-          git commit -m "🖼 File Updated"
+      # - name: If File Exists Delete to Replace in the Repo
+      #   run: |
+      #     # File Exist Remove from Git and Commit 
+      #     if [[ -e ./aws/AWS-Architecture-Icons-Deck_For-Light-BG_07312022.pptx ]]; then 
+      #       git rm -f ./aws/AWS-Architecture-Icons-Deck_For-Light-BG_07312022.pptx
+      #     fi 
+      #     git commit -m "🖼 File Updated"
           
       - name: Download AWS Package
         uses: wei/curl@master
