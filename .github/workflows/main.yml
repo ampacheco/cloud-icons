@@ -65,6 +65,6 @@ jobs:
       - name: Commit to main branch
         run: |
           # Stage the file, commit and push
-          git add $PPTX_FILE_NAME
+          git add -A
           git commit -m "🖼 Files Updated `date`"
           git push
