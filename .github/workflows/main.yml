@@ -11,7 +11,7 @@ on:
 env: 
   ZIP_URL: https://d1.awsstatic.com/webteam/architecture-icons/q1-2024/AWS-Architecture-Icons-Deck_For-Light-BG_02062024.pptx.b1f92b80898107a7c80eb70d66957c7ff2994b8a.zip
   ZIP_FILE_NAME: AWS-Architecture-Icons-Deck_For-Light-BG_02062024.pptx.b1f92b80898107a7c80eb70d66957c7ff2994b8a.zip
-  PPTX_FILE_NAME: AWS-Architecture-Icons.pptx
+  PPTX_FILE_NAME: AWS-Architecture-Icons-Deck_For-Light-BG_02062024.pptx
   
 jobs:
   Explore-GitHub-Actions:
@@ -45,11 +45,11 @@ jobs:
       - name: Unzip PPTX File from AWS Package
         uses: montudor/action-zip@v1
         with:
-          args: unzip -o -d aws -qq AWS-Architecture-Icons-Deck_For-Light-BG_07312022.pptx.fc6d89024028f03b5fe7f8a03b2ffe2d5bf55bda.zip
+          args: unzip -o -d aws -qq $ZIP_FILE_NAME
       
       - name: Commit to main branch
         run: |
           # Stage the file, commit and push
-          git add ./aws/AWS-Architecture-Icons-Deck_For-Light-BG_07312022.pptx
+          git add ./aws/$PPTX_FILE_NAME
           git commit -m "🖼 Files Updated `date`"
           git push
