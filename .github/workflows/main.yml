@@ -16,7 +16,14 @@ env:
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
-    steps:    
+    steps:
+    
+      - name: 🪳🪳🪳 Debug 🪳🪳🪳
+        run: |
+          echo #ZIP_URL
+          echo $ZIP_URL
+          echo $PPTX_FILE_NAME
+    
       # Checkout the branch
       - name: checkout
         uses: actions/checkout@v3
